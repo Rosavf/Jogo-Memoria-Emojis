@@ -1,0 +1,123 @@
+ body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    min-height: 100vh;
+    background-color: #fc1e8a;  
+    user-select: none; 
+ }
+
+ .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-image: linear-gradient(to right top, #1a6de5, #0097fe, #00b9f4, #00d5d2, #12eba7);
+    padding: 40px 60px;
+    border-radius: 40px;
+    box-shadow: 10px 10px 5px 0px rgba(0,185,244,0.28);
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,185,244,0.28);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(0,185,244,0.28);
+ }
+
+
+ h2 {
+
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow:1px 1px 2px rgb(8, 106, 104);
+   
+ }
+
+
+ .reset {
+
+    padding: 15px 20px;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    font-size: 1.5em;
+    border-radius: 50px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+
+ }
+
+ 
+.reset:focus{
+
+   color: rgb(255, 255, 255);
+   background-color: rgb(94, 2, 159);
+   box-shadow: 10px 10px 5px 0px rgba(228, 127, 218, 0.33);
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(242, 101, 239, 0.33);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(246, 112, 203, 0.33);
+}
+
+
+.game {
+
+   /* border: 1px solid pink; */
+   width: 430px;
+   height: 430px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   transform-style: preserve-3d;
+   perspective: 500px;
+   
+  
+}
+
+
+.item{
+   position: relative;
+   width: 100px;
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transform: rotateY(180deg);
+   transition: 0.25s;
+   background-color: #fff;
+   font-size: 3em;
+   border-radius: 50px;
+   border: 3px solid pink;
+   box-shadow: 5px 5px 2px 0px rgba(252,30,138,0.33);
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(252,30,138,0.33);
+   /* -moz-box-shadow: 10px 10px 5px 0px rgba(252,30,138,0.33); */
+
+   
+}
+
+.item::after {
+   
+   content: "";
+   position: absolute;
+   inset: 0;
+   transition: 0.25s;
+   transform: rotateY(0deg);
+   backface-visibility:hidden;
+   background: #f607c6;
+   border-radius: 50px;
+   border: 1px solid pink;
+
+   
+}
+
+.item.boxOpen {
+
+   transform: rotateY(0deg);
+}
+
+.item.boxOpen::after,
+.item.boxMatch::after{
+
+   transform: rotateY(180de);
+}
