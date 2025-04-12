@@ -76,7 +76,7 @@
 }
 
 
-.item{
+.item {
    position: relative;
    width: 100px;
    height: 100px;
@@ -119,5 +119,5 @@
 .item.boxOpen::after,
 .item.boxMatch::after{
 
-   transform: rotateY(180de);
+   transform: rotateY(180deg);
 }
